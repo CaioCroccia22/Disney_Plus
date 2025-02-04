@@ -1,5 +1,71 @@
-$bgColor: rgb(131, 173, 228);
+//Importação de arquivos
+@use 'hero';
+
+
+//Esquema de cores
+$mainBackGroundColor: #040714;
+$mainTextColor: rgb(192, 192, 192);
+$secondTextColor: #f9f9f9;
+
+//Reset de página
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//Definição do padrão do line height sempre 10px maior que o font-size
+@mixin text($fontSize: 16px){
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: $mainTextColor;
+}
+
+//Variações do tipo de texto
+.text--big{
+    @include text(18px)
+}
+
+.text{
+    @include text(16px)
+}
+
+.text--small{
+    @include text(12px)
+}
+
+
+//Criação de Mixin para diferentes tamanhos de titulos
+@mixin title($fontSize: 40px){
+    @include text($fontSize);
+    color: $secondTextColor;
+}
+
+
+//Variações dos tipos de titulos
+
+.title--big{
+    @include title(44px);
+}
+
+.title{
+    @include title;
+}
+
+.title--small{
+    @include title(28px);
+}
+
+
+
 
 body{
-    background-color: $bgColor;
+    background-color: $mainBackGroundColor;
+}
+
+//Link "assinar disney+" 
+.link-text{
+    @include text(18px);
+    color: $secondTextColor;
+    text-decoration: underline;
 }

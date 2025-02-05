@@ -1,11 +1,20 @@
 //Importação de arquivos
 @use 'hero';
+@use 'var';
+
+@font-face{
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
+}
+
+@font-face{
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
 
 
-//Esquema de cores
-$mainBackGroundColor: #040714;
-$mainTextColor: rgb(192, 192, 192);
-$secondTextColor: #f9f9f9;
 
 //Reset de página
 *{
@@ -18,7 +27,7 @@ $secondTextColor: #f9f9f9;
 @mixin text($fontSize: 16px){
     font-size: $fontSize;
     line-height: $fontSize + 10px;
-    color: $mainTextColor;
+    color: var.$mainTextColor;
 }
 
 //Variações do tipo de texto
@@ -38,7 +47,7 @@ $secondTextColor: #f9f9f9;
 //Criação de Mixin para diferentes tamanhos de titulos
 @mixin title($fontSize: 40px){
     @include text($fontSize);
-    color: $secondTextColor;
+    color: var.$secondTextColor;
 }
 
 
@@ -60,12 +69,13 @@ $secondTextColor: #f9f9f9;
 
 
 body{
-    background-color: $mainBackGroundColor;
+    background-color: var.$mainBackGroundColor;
+    font-family: Avenir, sans-serif;
 }
 
 //Link "assinar disney+" 
 .link-text{
     @include text(18px);
-    color: $secondTextColor;
+    color: var.$secondTextColor;
     text-decoration: underline;
 }

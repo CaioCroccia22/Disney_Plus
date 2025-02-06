@@ -1,6 +1,7 @@
 //Importação de arquivos
 @use 'hero';
 @use 'var';
+@use 'shows';
 
 @font-face{
     font-family: Avenir;
@@ -21,6 +22,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Avenir, sans-serif;
 }
 
 //Definição do padrão do line height sempre 10px maior que o font-size

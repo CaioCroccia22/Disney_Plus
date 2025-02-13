@@ -1,11 +1,13 @@
 //Importação de arquivos
-@use 'hero';
 @use 'var';
+@use "sass:color";
+@use 'hero';
 @use 'shows';
 @use 'plans';
 @use 'available-devices';
 @use 'faq';
 @use 'footer';
+@use 'header';
 
 @font-face{
     font-family: Avenir;
@@ -27,6 +29,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Avenir, sans-serif;
+    list-style: none;
 }
 
 //Definição do padrão do line height sempre 10px maior que o font-size
@@ -72,16 +75,43 @@
 }
 
 .button{
-        display: block;
+        display: flex;
+        justify-content: center;
         width: 100%;
         height: 60px;
         font-size: 18px;
         color: var.$mainTextColor;
-        background-color: #6421ff;
+        background-color: var.$mainBackgroundColorButton;
         text-transform: uppercase;
         border-radius: 4px;
-        margin-top: 2vw;
-        margin-bottom: 8px;
+        text-decoration: none;
+        padding: 8px 14px;
+        letter-spacing: 1px;
+        border: 1px solid var.$mainBackGroundColor;
+
+        &:hover{
+            background-color: color.adjust(var.$mainBackgroundColorButton, $lightness: 3%);
+        }
+
+        &--secondary{
+            background: var.$secondBackgroundColorButton;
+            border-color: var.$mainTextColor;
+
+            &:hover{
+                background-color: color.adjust(var.$secondBackgroundColorButton, $lightness: 3%);
+            }
+        }
+
+       
+        &--dark{
+            // background-color: rgba(var.$DarkBackgroundColorButton, 0.9);
+            background-color: rgba(0, 0, 0, 0.2);
+
+            &:hover{
+                background-color: var.$secondTextColor;
+                color: var.$mainBackGroundColor;
+            }
+        }
 }
 
 
